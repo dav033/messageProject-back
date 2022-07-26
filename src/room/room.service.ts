@@ -6,7 +6,6 @@ import { Room } from 'src/interfaces/rooms.interface'
 import { CreateRoomDto } from './Room.dto'
 import { Users } from '../interfaces/users.interface'
 import { Message } from 'src/interfaces/messages.interface'
-import { find } from 'rxjs'
 
 interface Hola {
   room: Room

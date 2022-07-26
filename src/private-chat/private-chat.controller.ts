@@ -24,9 +24,10 @@ export class PrivateChatController {
   }
 
   @Post('/groupId')
-  async getPrivatesChatByIdGroup (@Body('idGroup') idGroup, @Res() res) {
+  async getPrivatesChatByIdGroup (@Body() { idGroup, userId }, @Res() res) {
     const privatesChat = await this.chatService.getPrivatesChatByIdGroup(
-      idGroup
+      idGroup,
+      userId
     )
 
     res.status(HttpStatus.OK).json(privatesChat)
@@ -48,5 +49,12 @@ export class PrivateChatController {
     const response = await this.chatService.getOtherUserByChatId(id, chatId)
 
     res.status(HttpStatus.OK).json(response)
+  }
+
+  @Post('updateUsersRead')
+  async setMessagesReaded (@Body() { roomId, userId }, @Res() res) {
+    const response = await this.chatService.setMessagesReaded(roomId, userId)
+
+    console.log('response:', response)
   }
 }

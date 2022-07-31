@@ -11,7 +11,9 @@ import { EventsGateway } from './events.gateway'
 @Module({
   imports: [
     UsersModule,
-    MongooseModule.forRoot('mongodb://localhost/adios'),
+    MongooseModule.forRoot(
+      'mongodb+srv://david:clavesegura03@cluster0.61stp41.mongodb.net/?retryWrites=true&w=majority'
+    ),
     MessagesModule,
     RoomModule,
     PrivateChatModule

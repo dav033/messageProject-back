@@ -28,7 +28,7 @@
     "@nestjs/platform-express": "^8.0.0",
     "@nestjs/platform-socket.io": "^8.4.7",
     "@nestjs/websockets": "^8.4.7",
-    "aws-sdk": "^2.1167.0",
+    "aws-sdk": "^2.1167.0", 
     "code-complexity": "^4.1.0",
     "cors": "^2.8.5",
     "dotenv": "^16.0.1",

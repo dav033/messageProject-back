@@ -10,7 +10,6 @@ import { Server, Socket } from 'socket.io'
 let usersList = []
 
 @WebSocketGateway(80, {
-  transports: ['websocket'],
   cors: {
     origin: '*'
   }

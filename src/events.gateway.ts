@@ -9,7 +9,7 @@ import {
 import { Server, Socket } from 'socket.io'
 let usersList = []
 
-@WebSocketGateway(4000, {
+@WebSocketGateway(80, {
   cors: {
     origin: '*'
   }

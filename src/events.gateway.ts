@@ -7,9 +7,10 @@ import {
   WebSocketServer
 } from '@nestjs/websockets'
 import { Server, Socket } from 'socket.io'
+require('dotenv').config()
 let usersList = []
 
-@WebSocketGateway(80, {
+@WebSocketGateway(parseInt(process.env.PORT_SOCKET) || 4000, {
   cors: true
 })
 export class EventsGateway

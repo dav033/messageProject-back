@@ -12,6 +12,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.EventsGateway = void 0;
 const websockets_1 = require("@nestjs/websockets");
 const socket_io_1 = require("socket.io");
+require('dotenv').config();
 let usersList = [];
 let EventsGateway = class EventsGateway {
     afterInit(server) {
@@ -96,10 +97,8 @@ __decorate([
     __metadata("design:returntype", void 0)
 ], EventsGateway.prototype, "handleSendMessageToPrivateCahat", null);
 EventsGateway = __decorate([
-    (0, websockets_1.WebSocketGateway)(80, {
-        cors: {
-            origin: '*'
-        }
+    (0, websockets_1.WebSocketGateway)(parseInt(process.env.PORT_SOCKET) || 80, {
+        cors: true
     })
 ], EventsGateway);
 exports.EventsGateway = EventsGateway;

@@ -4,6 +4,7 @@ require('dotenv').config()
 
 const cors = require('cors')
 async function bootstrap () {
+  console.log('AAA')
   const app = await NestFactory.create(AppModule, { cors: true })
   app.use(
     cors({

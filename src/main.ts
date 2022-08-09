@@ -15,6 +15,10 @@ async function bootstrap () {
     })
   )
 
-  await app.listen(process.env.PORT || 5000)
+  await app.listen(process.env.PORT || 5000, () => {
+    console.log(
+      `Server running on http://localhost:${process.env.PORT} and ${process.env.PORT_SOCKET}`
+    )
+  })
 }
 bootstrap()

@@ -10,8 +10,9 @@ import { Server, Socket } from 'socket.io'
 require('dotenv').config()
 let usersList = []
 
-@WebSocketGateway(parseInt(process.env.PORT_SOCKET) || 80, {
-  cors: true
+@WebSocketGateway(parseInt(process.env.PORT_SOCKET) || 8080, {
+  cors: true,
+  transports: ['websockets']
 })
 export class EventsGateway
 implements OnGatewayConnection, OnGatewayInit, OnGatewayDisconnect {

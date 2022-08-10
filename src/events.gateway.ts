@@ -10,7 +10,7 @@ import { Server, Socket } from 'socket.io'
 require('dotenv').config()
 let usersList = []
 
-@WebSocketGateway(parseInt(process.env.PORT_SOCKET) || 8080, {
+@WebSocketGateway(parseInt(process.env.PORT_SOCKET) || 80, {
   cors: true
   // transports: ['websockets']
 })

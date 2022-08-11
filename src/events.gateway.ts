@@ -10,7 +10,7 @@ import { Server, Socket } from 'socket.io'
 require('dotenv').config()
 let usersList = []
 
-@WebSocketGateway(81, {
+@WebSocketGateway(80, {
   cors: { origin: '*' }
 })
 export class EventsGateway

@@ -10,30 +10,8 @@ import { Server, Socket } from 'socket.io'
 require('dotenv').config()
 let usersList = []
 
-@WebSocketGateway(parseInt(process.env.PORT_SOCKET), {
-  cors: true,
-  handlePreflightRequest: (
-    _req: any,
-    res: {
-      writeHead: (
-        arg0: number,
-        arg1: {
-          'Access-Control-Allow-Headers': string
-          'Access-Control-Allow-Origin': string
-          'Access-Control-Allow-Credentials': boolean
-        },
-      ) => void
-      end: () => void
-    }
-  ) => {
-    const headers = {
-      'Access-Control-Allow-Headers': 'Authorization',
-      'Access-Control-Allow-Origin': 'the page origin',
-      'Access-Control-Allow-Credentials': true
-    }
-    res.writeHead(200, headers)
-    res.end()
-  }
+@WebSocketGateway(81, {
+  cors: { origin: '*' }
 })
 export class EventsGateway
 implements OnGatewayConnection, OnGatewayInit, OnGatewayDisconnect {
@@ -43,7 +21,7 @@ implements OnGatewayConnection, OnGatewayInit, OnGatewayDisconnect {
     console.log('Esto se ejecuta cuando inicia')
   }
 
-  handleConnection (client: any, id: any) {
+  handleConnection (client: any, id) {
     console.log('Hola alguien se conecto al socket 👌👌👌')
   }
 

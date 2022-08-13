@@ -11,8 +11,8 @@ require('dotenv').config()
 let usersList = []
 
 @WebSocketGateway(80, {
-  cors: { origin: '*' },
-  transports: ['websocket']
+  cors: { origin: '*' }
+  // transports: ['websocket']
 })
 export class EventsGateway
 implements OnGatewayConnection, OnGatewayInit, OnGatewayDisconnect {

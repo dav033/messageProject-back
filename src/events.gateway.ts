@@ -11,7 +11,8 @@ require('dotenv').config()
 let usersList = []
 
 @WebSocketGateway(parseInt(process.env.PORT_SOCKET) || 80, {
-  cors: { origin: '*', allowedHeaders: '*' }
+  cors: { origin: '*', allowedHeaders: '*' },
+  transports: ['websocket', 'polling']
 
   // extraHeaders: { AccessControlAllowOrigin: '*' }
 })

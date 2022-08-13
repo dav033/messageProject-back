@@ -12,9 +12,8 @@ let usersList = []
 
 @WebSocketGateway({
   cors: { origin: '*', allowedHeaders: '*' },
-  transports: ['websocket', 'polling']
 
-  // extraHeaders: { AccessControlAllowOrigin: '*' }
+  extraHeaders: { AccessControlAllowOrigin: '*' }
 })
 export class EventsGateway
 implements OnGatewayConnection, OnGatewayInit, OnGatewayDisconnect {

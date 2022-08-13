@@ -18,7 +18,7 @@ async function bootstrap () {
   )
   app.useWebSocketAdapter(new WsAdapter(app))
 
-  await app.listen(process.env.PORT_SOCKET || 5000, () => {
+  await app.listen(process.env.PORT_SOCKET || 80, () => {
     console.log(
       `Server running on http://localhost:${process.env.PORT} and ${process.env.PORT_SOCKET}`
     )

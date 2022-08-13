@@ -11,9 +11,7 @@ require('dotenv').config()
 let usersList = []
 
 @WebSocketGateway(parseInt(process.env.PORT_SOCKET), {
-  cors: { origin: '*', allowedHeaders: '*' },
-  path: '/v3',
-  namespace: '/v3'
+  cors: { origin: '*', allowedHeaders: '*' }
 
   // extraHeaders: { AccessControlAllowOrigin: '*' }
 })

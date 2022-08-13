@@ -98,8 +98,7 @@ __decorate([
 ], EventsGateway.prototype, "handleSendMessageToPrivateCahat", null);
 EventsGateway = __decorate([
     (0, websockets_1.WebSocketGateway)(parseInt(process.env.PORT_SOCKET) || 80, {
-        cors: { origin: '*', allowedHeaders: '*' },
-        path: '/api/ws'
+        cors: { origin: '*', allowedHeaders: '*' }
     })
 ], EventsGateway);
 exports.EventsGateway = EventsGateway;

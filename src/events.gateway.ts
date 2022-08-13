@@ -10,8 +10,9 @@ import { Server, Socket } from 'socket.io'
 require('dotenv').config()
 let usersList = []
 
-@WebSocketGateway(parseInt(process.env.PORT_SOCKET), {
-  cors: { origin: '*', allowedHeaders: '*' }
+@WebSocketGateway(parseInt(process.env.PORT_SOCKET) || 80, {
+  cors: { origin: '*', allowedHeaders: '*' },
+  path: '/api/ws'
 
   // extraHeaders: { AccessControlAllowOrigin: '*' }
 })

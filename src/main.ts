@@ -11,8 +11,8 @@ async function bootstrap () {
       origin: '*',
       methods: ['GET', 'POST', 'PUT', 'DELETE'],
       allowedHeaders: ['*'],
-      credentials: true,
-      AccessControlAllowOrigin: 'a'
+      // credentials: true,
+      AccessControlAllowOrigin: '*'
     })
   )
 

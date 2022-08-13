@@ -12,7 +12,7 @@ let usersList = []
 
 @WebSocketGateway(parseInt(process.env.PORT_SOCKET) || 80, {
   cors: { origin: '*', allowedHeaders: '*' },
-  transports: ['polling']
+  transports: ['websocket', 'polling']
 
   // extraHeaders: { AccessControlAllowOrigin: '*' }
 })

@@ -1,5 +1,6 @@
 import { NestFactory } from '@nestjs/core'
 import { AppModule } from './app.module'
+import { WsAdapter } from '@nestjs/platform-ws'
 require('dotenv').config()
 
 const cors = require('cors')
@@ -15,6 +16,7 @@ async function bootstrap () {
       AccessControlAllowOrigin: '*'
     })
   )
+  app.useWebSocketAdapter(new WsAdapter(app))
 
   await app.listen(process.env.PORT || 5000, () => {
     console.log(

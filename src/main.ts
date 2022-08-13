@@ -12,7 +12,7 @@ async function bootstrap () {
       methods: ['GET', 'POST', 'PUT', 'DELETE'],
       allowedHeaders: ['*'],
       // credentials: true,
-      AccessControlAllowOrigin: 'http://localhost:3000/'
+      AccessControlAllowOrigin: '*'
     })
   )
 
